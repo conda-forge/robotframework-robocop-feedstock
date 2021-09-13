@@ -11,8 +11,8 @@ source:
   - folder: src
     url: https://github.com/MarketSquare/robotframework-robocop/archive/refs/tags/{{ version }}.tar.gz
     sha256: a3b296f58126ee6e3fcea38f5ff0d1d7ef51f9685527ca16fc425c6d3aa0cb9e
-    patches:
-      - 0001-skip-git-test.patch
+    # patches:
+    #  - 0001-skip-git-test.patch
 
 build:
   number: 0
