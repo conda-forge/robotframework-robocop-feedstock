@@ -47,6 +47,7 @@ test:
     - coverage
     - pip
     - pytest
+    - pytest-benchmark
     - pyyaml
     - toml
 
