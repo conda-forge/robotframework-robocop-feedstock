@@ -33,6 +33,12 @@ requirements:
     - robotframework >=3.2.2
     - toml >=0.10.2
 
+{% set skips = [
+  "benchmark",
+  "e2e",
+  "find_project_root_missing_but_git",
+] %}
+
 test:
   source_files:
     - src/tests
@@ -42,15 +48,13 @@ test:
     - pip check
     - robocop --version
     - robocop --help
-    - cd src
-    - python -c "__import__('pathlib').Path('pytest.ini').write_text('''[pytest]\\naddopts = -k 'not find_project_root_missing_but_git' ''')"
-    - coverage run --source=robocop -m pytest
-    - coverage report --fail-under=96
+    - cd src && pytest -vv --no-cov-on-fail --cov=robocop --cov-report=term-missing:skip-covered --cov-fail-under=92 -k="not ({{" or ".join(skips) }})"
   requires:
     - coverage
     - pip
     - pytest
     - pytest-benchmark
+    - pytest-cov
     - pyyaml
     - toml
 
