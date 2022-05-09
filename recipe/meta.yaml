@@ -48,7 +48,7 @@ test:
     - pip check
     - robocop --version
     - robocop --help
-    - cd src && pytest -vv --no-cov-on-fail --cov=robocop --cov-report=term-missing:skip-covered --cov-fail-under=92 -k="not ({{" or ".join(skips) }})"
+    - cd src && pytest -vv --no-cov-on-fail --cov=robocop --cov-report=term-missing:skip-covered --cov-fail-under=92 -k="not ({{ " or ".join(skips) }})"
   requires:
     - coverage
     - pip
