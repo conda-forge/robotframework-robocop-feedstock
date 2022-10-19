@@ -14,6 +14,8 @@ SKIPS = [
     "e2e",
     # assumes source repo
     "find_project_root_missing_but_git",
+    # maybe 3.10?
+    "both_tests_and_tasks"
 ]
 
 PYTEST_ARGS = ["pytest", "-vv", "-k", f"""not ({" or ".join(SKIPS)})"""]
