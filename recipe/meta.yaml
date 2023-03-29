@@ -24,18 +24,17 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
     - robotframework >=3.2.2
     - toml >=0.10.2
   run:
     - jinja2 >=3.0,<4.0
-    - packaging >=21.0,<23.0
     - pathspec >=0.9,<0.12
-    - python >=3.6
-    - python-dateutil >=2.8.1
-    - pytz >=2022.1
+    - python >=3.7
+    - python-dateutil >=2.8.2
+    - pytz >=2022.7
     - robotframework >=3.2.2
-    - tomli
+    - tomli >=2.0.0
 
 test:
   source_files:
