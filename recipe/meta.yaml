@@ -1,4 +1,4 @@
-{% set version = "4.2.1" %}
+{% set version = "4.2.2" %}
 
 package:
   name: robotframework-robocop
@@ -7,15 +7,15 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/r/robotframework-robocop/robotframework-robocop-{{ version }}.tar.gz
-    sha256: fae128ab01ddc066ac652c9956cf11afb8b19369cd4fb3002ed27fa69e2ba324
+    sha256: 49e4f98bef53ce5d5879cfc2e2cf6cb47eb4cdc5587d820a57db88a79e6682bb
   - folder: src
     url: https://github.com/MarketSquare/robotframework-robocop/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 11fd1b43a328fbbd5a09e662ea6ab23a911b32c326b78e8f4e336055a166bff6
+    sha256: 445a80ebc041726e3a556f9fdc6449c7369add826722bdc2c4f16e6db34fe6fc
 
 build:
   number: 0
   noarch: python
-  script: cd dist && {{ PYTHON }} -m pip install . -vv
+  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - robocop=robocop:run_robocop
   script_env:
@@ -24,12 +24,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.8
   run:
     - jinja2 >=3.0,<4.0
     - pathspec >=0.9,<0.12
-    - platformdirs >=3.2.0,<3.12.0
-    - python >=3.7
+    - platformdirs >=3.2.0,<4.2.0
+    - python >=3.8
     - python-dateutil >=2.8.2
     - pytz >=2022.7
     - robotframework >=3.2.2
