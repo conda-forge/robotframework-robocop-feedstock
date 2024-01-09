@@ -22,7 +22,7 @@ SKIPS = [
 ]
 
 PYTEST_ARGS = [
-    "pytest", "-vv", "--color=yes", "--tb-long", "-k", f"""not ({" or ".join(SKIPS)})"""
+    "pytest", "-vv", "--color=yes", "--tb=long", "-k", f"""not ({" or ".join(SKIPS)})"""
 ]
 
 COVERAGE_THRESHOLD = os.environ.get("COVERAGE_THRESHOLD")
