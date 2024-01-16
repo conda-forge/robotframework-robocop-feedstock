@@ -1,4 +1,4 @@
-{% set version = "5.0.0" %}
+{% set version = "5.0.2" %}
 
 package:
   name: robotframework-robocop
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/r/robotframework-robocop/robotframework-robocop-{{ version }}.tar.gz
-    sha256: 7a6d92429211a48609386675bd90155ace5318e7bc56dea822c9be4faa67ff76
+    sha256: 42e0a691aeb103b74f3089e0427106bd8619042e6c64b5d15651800da013071e
   - folder: src
     url: https://github.com/MarketSquare/robotframework-robocop/archive/refs/tags/{{ version }}.tar.gz
-    sha256: efc184d0312273afe0754024420cfb56ed50803066c98ab6a0e0a90590b6f5bd
+    sha256: 232ac2931ff130f168d40008257f58db82b064c121642de8cb7f5f2e75cdd636
 
 build:
   number: 0
