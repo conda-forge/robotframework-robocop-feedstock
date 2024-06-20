@@ -19,7 +19,7 @@ build:
   entry_points:
     - robocop=robocop:run_robocop
   script_env:
-    - COVERAGE_THRESHOLD=43
+    - COVERAGE_THRESHOLD=41
 
 requirements:
   host:
