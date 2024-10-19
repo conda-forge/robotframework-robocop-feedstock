@@ -25,6 +25,7 @@ requirements:
   host:
     - pip
     - python >=3.8
+    - setuptools
   run:
     - jinja2 >=3.0,<4.0
     - pathspec >=0.9,<0.13
