@@ -18,7 +18,8 @@ build:
   number: 0
   noarch: python
   script:
-    - cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - cd dist
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   entry_points:
     - robocop=robocop:run_robocop
   script_env:
@@ -36,7 +37,7 @@ requirements:
     - python >={{ python_min }}
     - python-dateutil >=2.8.2
     - pytz >=2022.7
-    - robotframework >=3.2.2
+    - robotframework >=3.2.2,<7.2
     - tomli >=2.0.0
 
 test:
