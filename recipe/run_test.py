@@ -1,12 +1,7 @@
-import os
-import shutil
-import subprocess
+from subprocess import call
 import sys
-import tempfile
-from pathlib import Path
 
-SRC_DIR = Path(os.environ["SRC_DIR"])
-TESTS = SRC_DIR / "src/tests"
+COVERAGE_THRESHOLD = 41
 SKIPS = [
     # slow, don't care
     "benchmark",
@@ -21,22 +16,26 @@ SKIPS = [
     "setting_not_supported",
 ]
 
-PYTEST_ARGS = [
-    "pytest", "-vv", "--color=yes", "--tb=long", "-k", f"""not ({" or ".join(SKIPS)})"""
+TEST_ARGS = [
+    "coverage",
+    "run",
+    "--source=robocop",
+    "--branch-mpytest",
+    "src/tests",
+    "-vv",
+    "--color=yes",
+    "--tb=long",
+    "-k",
+    f"""not ({" or ".join(SKIPS)})""",
 ]
 
-COVERAGE_THRESHOLD = os.environ.get("COVERAGE_THRESHOLD")
-
-if COVERAGE_THRESHOLD:
-    PYTEST_ARGS += [
-        "--no-cov-on-fail",
-        "--cov=robocop",
-        "--cov-report=term-missing:skip-covered",
-        f"--cov-fail-under={COVERAGE_THRESHOLD}",
-    ]
+REPORT_ARGS = [
+    "coverage",
+    "report",
+    "--show-missing",
+    "--skip-covered",
+    f"--fail-under={COVERAGE_THRESHOLD}",
+]
 
 if __name__ == "__main__":
-    # move the tests to a temporary dir to avoid $SRC_DIR path rewriting
-    with tempfile.TemporaryDirectory() as td:
-        shutil.copytree(TESTS, Path(td) / "tests")
-        sys.exit(subprocess.call(PYTEST_ARGS, cwd=td))
+    sys.exit(call(TEST_ARGS) or call(REPORT_ARGS))

@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 6.0.0
+
+package:
+  name: robotframework-robocop
+  version: ${{ version }}
+
+source:
+  - url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
+    sha256: 79cc43d8d3664e71ac4a8aead8dd145bb7f5e38247b71dbaf0ad19cd20ec2563
+    target_directory: dist
+  - url: https://github.com/MarketSquare/robotframework-robocop/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 56501feb89f4545c03efb8fd21efb53935972f1923fae16225caa3431ad872fe
+    target_directory: src
+
+build:
+  number: 0
+  noarch: python
+  script:
+    content:
+      - cd dist
+      - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - robocop = robocop.run:main
+
+requirements:
+  host:
+    - hatchling >=1.26.1
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - jinja2 >=3.1.4,<3.2
+    - pathspec >=0.12,<0.13
+    - platformdirs >=4.3,<4.4
+    - python >=${{ python_min }}
+    - python-dateutil >=2.8.2
+    - robotframework >=3.2.2,<7.3
+    - tomli ==2.0.2
+    - typer >=0.12.5,<0.16
+
+tests:
+  - python:
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
+      imports: robocop
+  - files:
+      recipe:
+        - run_test.py
+      source:
+        - src/tests/
+    requirements:
+      run:
+        - pytest-cov
+        - python ${{ python_min }}
+    script:
+      - robocop --version
+      - robocop --help
+      - python run_test.py
+
+about:
+  summary: Static code analysis tool (linter) and code formatter for Robot Framework
+  license: Apache-2.0
+  license_file: src/LICENSE
+  homepage: https://github.com/MarketSquare/robotframework-robocop
+  documentation: https://robocop.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
