@@ -7,15 +7,9 @@ Home: https://github.com/MarketSquare/robotframework-robocop
 
 Package license: Apache-2.0
 
-Summary: Static code analysis tool (linter) for Robot Framework
+Summary: Static code analysis tool (linter) and code formatter for Robot Framework
 
-Documentation: https://robocop.readthedocs.io
-
-Robocop is a tool that performs static code analysis of Robot Framework code.
-
-It uses official Robot Framework parsing API to parse files and run number of
-checks, looking for potential errors or violations to code quality standards.
-
+Documentation: https://robocop.readthedocs.io/
 
 Current build status
 ====================
