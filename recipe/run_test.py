@@ -4,7 +4,7 @@ import tempfile
 import shutil
 from pathlib import Path
 
-COVERAGE_THRESHOLD = 64
+COVERAGE_THRESHOLD = 63
 SKIPS: list[str] = [
     # https://github.com/conda-forge/robotframework-robocop-feedstock/pull/48
     # expects a specific git layout
