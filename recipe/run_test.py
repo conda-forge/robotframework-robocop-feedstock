@@ -1,33 +1,34 @@
 from subprocess import call
 import sys
+import tempfile
+import shutil
+from pathlib import Path
 
-COVERAGE_THRESHOLD = 41
-SKIPS = [
-    # slow, don't care
-    "benchmark",
-    # assumes sys.argv
-    "e2e",
-    # assumes source repo
-    "find_project_root_missing_but_git",
-    # maybe 3.10?
-    "both_tests_and_tasks",
-    # no idea
-    "parsing_error",
-    "setting_not_supported",
+COVERAGE_THRESHOLD = 64
+SKIPS: list[str] = [
+    # https://github.com/conda-forge/robotframework-robocop-feedstock/pull/48
+    # expects a specific git layout
+    "gitignore",
 ]
 
 TEST_ARGS = [
     "coverage",
     "run",
     "--source=robocop",
-    "--branch-mpytest",
-    "src/tests",
+    "--branch",
+    "-m",
+    "pytest",
     "-vv",
     "--color=yes",
     "--tb=long",
-    "-k",
-    f"""not ({" or ".join(SKIPS)})""",
 ]
+
+if SKIPS:
+    TEST_ARGS += [
+        "-k",
+        f"not {SKIPS[0]}" if len(SKIPS) == 1 else f"""not ({" or ".join(SKIPS)})""",
+    ]
+
 
 REPORT_ARGS = [
     "coverage",
@@ -38,4 +39,8 @@ REPORT_ARGS = [
 ]
 
 if __name__ == "__main__":
-    sys.exit(call(TEST_ARGS) or call(REPORT_ARGS))
+    # move the tests to a temporary dir to avoid path assumption issues
+    with tempfile.TemporaryDirectory() as td:
+        shutil.copytree("tests", Path(td) / "tests")
+        shutil.copy2(Path("pyproject.toml"), Path(td) / "pyproject.toml")
+        sys.exit(call(TEST_ARGS, cwd=td) or call(REPORT_ARGS, cwd=td))
