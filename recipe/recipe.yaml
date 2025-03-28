@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 6.0.0
+  version: "6.0.1"
 
 package:
   name: robotframework-robocop
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 79cc43d8d3664e71ac4a8aead8dd145bb7f5e38247b71dbaf0ad19cd20ec2563
+  sha256: 807d36aa0f0bf10a2a95a2b80cb91717c189a9fcb206eb130e78cc08bc36eb9e
 
 build:
   number: 0
@@ -28,16 +28,16 @@ requirements:
     - pip
     - python ${{ python_min }}.*
   run:
-    - jinja2 >=3.1.4,<3.2
-    - pathspec >=0.12,<0.13
-    - platformdirs >=4.3,<4.4
+    - jinja2 >=3.1.4
+    - pathspec >=0.12
+    - platformdirs >=4.3
     - python >=${{ python_min }}
     - python-dateutil >=2.8.2
-    - pytz >=2022.7,<2025.2
+    - pytz >=2022.7
     - robotframework >=4.0,<7.3
     - tomli ==2.0.2
-    - tomli-w >=1.0,<1.3
-    - typer >=0.12.5,<0.16
+    - tomli-w >=1.0
+    - typer >=0.12.5
 
 tests:
   - python:
