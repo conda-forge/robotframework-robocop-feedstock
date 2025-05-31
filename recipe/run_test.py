@@ -9,6 +9,9 @@ SKIPS: list[str] = [
     # https://github.com/conda-forge/robotframework-robocop-feedstock/pull/48
     # expects a specific git layout
     "gitignore",
+    # https://github.com/conda-forge/robotframework-robocop-feedstock/pull/60
+    # expects version-dependent strings?
+    "invalid_for_loop and (TestRuleAcceptance and (test_rule or test_extended))",
 ]
 
 TEST_ARGS = [
