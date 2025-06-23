@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "6.4.0"
+  version: "6.5.0"
 
 package:
   name: robotframework-robocop
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 0ff64955b0a6e7ce0df699975ad66f7d0cbe8e8984a62ba93e8ab398ba0dc577
+  sha256: f9b01dce27cb40e5fe2766e0b201d885286f1bac02027e18e93e455e21852853
 
 build:
   number: 0
@@ -36,7 +36,7 @@ requirements:
     - pytz >=2022.7
     - rich >=10.11.0
     - robotframework >=4.0,<7.4
-    - tomli ==2.0.2
+    - tomli ==2.2.1
     - tomli-w >=1.0
     - typer-slim >=0.12.5
 
