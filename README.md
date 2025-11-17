@@ -9,7 +9,7 @@ Package license: Apache-2.0
 
 Summary: Static code analysis tool (linter) and code formatter for Robot Framework
 
-Documentation: https://robocop.readthedocs.io/
+Documentation: https://robocop.dev/
 
 Current build status
 ====================
