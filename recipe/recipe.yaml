@@ -67,7 +67,7 @@ about:
   license: Apache-2.0
   license_file: LICENSE
   homepage: https://github.com/MarketSquare/robotframework-robocop
-  documentation: https://robocop.readthedocs.io
+  documentation: https://robocop.dev
 
 extra:
   recipe-maintainers:
