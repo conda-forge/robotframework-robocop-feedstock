@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "6.10.1"
+  version: "6.11.0"
 
 package:
   name: robotframework-robocop
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 9c2d72db4bf1fec6fbc2cca97e9443c4ee6fa04fecd39a679056476393dc9259
+  sha256: ff84976864e53791cd577284d9311d2d95929928ae23cce5b37413490bbb51e7
 
 build:
   number: 0
