@@ -15,6 +15,9 @@ SKIPS: list[str] = [
     # https://github.com/conda-forge/robotframework-robocop-feedstock/pull/71
     # missing config error message?
     "test_invalid_threshold",
+    # https://github.com/conda-forge/robotframework-robocop-feedstock/pull/86
+    # error message drift?
+    "test_invalid_extends",
 ]
 
 TEST_ARGS = [
