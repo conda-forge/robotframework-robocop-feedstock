@@ -64,7 +64,7 @@ outputs:
           - robocop --help
 
   - package:
-      name: robotframwork-robocop-with-mcp
+      name: robotframework-robocop-with-mcp
     build:
       noarch: generic
     requirements:
@@ -87,7 +87,7 @@ outputs:
       summary: Static code analysis tool (linter) and code formatter for Robot Framework (with [mcp])
 
   - package:
-      name: robotframwork-robocop-with-all
+      name: robotframework-robocop-with-all
     build:
       noarch: generic
     requirements:
