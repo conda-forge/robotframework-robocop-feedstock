@@ -43,6 +43,19 @@ Development: https://github.com/MarketSquare/robotframework-robocop
 
 Documentation: https://robocop.dev/
 
+About robotframework-robocop-with-tests
+---------------------------------------
+
+Home: https://pypi.org/project/robotframework-robocop
+
+Package license: Apache-2.0
+
+Summary: Static code analysis tool (linter) and code formatter for Robot Framework (with all [extras] and tests)
+
+Development: https://github.com/MarketSquare/robotframework-robocop
+
+Documentation: https://robocop.dev/
+
 Current build status
 ====================
 
@@ -64,6 +77,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-robotframework--robocop-green.svg)](https://anaconda.org/conda-forge/robotframework-robocop) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/robotframework-robocop.svg)](https://anaconda.org/conda-forge/robotframework-robocop) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/robotframework-robocop.svg)](https://anaconda.org/conda-forge/robotframework-robocop) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/robotframework-robocop.svg)](https://anaconda.org/conda-forge/robotframework-robocop) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-robotframework--robocop--with--all-green.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/robotframework-robocop-with-all.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/robotframework-robocop-with-all.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/robotframework-robocop-with-all.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-all) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-robotframework--robocop--with--mcp-green.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-mcp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/robotframework-robocop-with-mcp.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-mcp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/robotframework-robocop-with-mcp.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-mcp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/robotframework-robocop-with-mcp.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-mcp) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-robotframework--robocop--with--tests-green.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-tests) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/robotframework-robocop-with-tests.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-tests) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/robotframework-robocop-with-tests.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-tests) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/robotframework-robocop-with-tests.svg)](https://anaconda.org/conda-forge/robotframework-robocop-with-tests) |
 
 Installing robotframework-robocop
 =================================
@@ -75,16 +89,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `robotframework-robocop, robotframework-robocop-with-all, robotframework-robocop-with-mcp` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `robotframework-robocop, robotframework-robocop-with-all, robotframework-robocop-with-mcp, robotframework-robocop-with-tests` can be installed with `conda`:
 
 ```
-conda install robotframework-robocop robotframework-robocop-with-all robotframework-robocop-with-mcp
+conda install robotframework-robocop robotframework-robocop-with-all robotframework-robocop-with-mcp robotframework-robocop-with-tests
 ```
 
 or with `mamba`:
 
 ```
-mamba install robotframework-robocop robotframework-robocop-with-all robotframework-robocop-with-mcp
+mamba install robotframework-robocop robotframework-robocop-with-all robotframework-robocop-with-mcp robotframework-robocop-with-tests
 ```
 
 It is possible to list all of the versions of `robotframework-robocop` available on your platform with `conda`:
