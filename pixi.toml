@@ -5,7 +5,7 @@
 
 [workspace]
 name = "robotframework-robocop-feedstock"
-version = "3.53.3"  # conda-smithy version used to generate this file
+version = "3.54.1"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/robotframework-robocop-feedstock"
 authors = ["@conda-forge/robotframework-robocop"]
 channels = ["conda-forge"]
