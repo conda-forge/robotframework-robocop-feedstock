@@ -48,7 +48,7 @@ outputs:
         - tomli-w >=1.0
         - typer-slim >=0.12.5
       run_constraints:
-        - fastmcp >=2.0.0
+        - fastmcp >=2.13.0
     tests:
       - python:
           imports: robocop.run
