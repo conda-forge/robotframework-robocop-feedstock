@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "7.2.0"
+  version: "8.0.0"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 20482f6cf0578558be8bca0a7655c74973d78deb33cbe71163bb7e2eec046b3d
+  sha256: 74e379fce9c8c6986140b868e73850c5338e353b952198693e24f6630e2219ca
 
 build:
   number: 0
@@ -43,10 +43,11 @@ outputs:
         - python-dateutil >=2.8.2
         - pytz >=2022.7
         - rich >=10.11.0
-        - robotframework >=4.0,<7.5
+        - robotframework >=5.0,<7.5
         - tomli ==2.2.1
         - tomli-w >=1.0
         - typer-slim >=0.12.5
+        - typing_extensions >=4.15.0
       run_constraints:
         - fastmcp >=2.13.0
     tests:
