@@ -46,7 +46,7 @@ outputs:
         - robotframework >=5.0,<7.5
         - tomli ==2.2.1
         - tomli-w >=1.0
-        - typer-slim >=0.12.5
+        - typer >=0.12.5
         - typing_extensions >=4.15.0
       run_constraints:
         - fastmcp >=2.13.0
