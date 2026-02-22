@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "8.1.1"
+  version: "8.2.0"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 47fcca15042d2d9adbc086542a58c1c6cf058c9a0e29bf38edf0ebc60e63e845
+  sha256: 4ee57053cf89af06f02acb8841b1a0c364886d8ecb05f410891c9fb91269e2ef
 
 build:
   number: 0
@@ -48,8 +48,6 @@ outputs:
         - tomli-w >=1.0
         - typer >=0.12.5
         - typing_extensions >=4.15.0
-      run_constraints:
-        - fastmcp >=2.13.0
     tests:
       - python:
           imports: robocop.run
@@ -81,6 +79,7 @@ outputs:
             - ${{ python_check_max }}.*
       - requirements:
           run:
+            - fastmcp >=2.13.0,<3
             - python ${{ python_min }}.*
         script:
           - robocop-mcp --version
