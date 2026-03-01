@@ -4,6 +4,7 @@ schema_version: 1
 context:
   version: "8.2.2"
   python_check_max: "3.14"
+  fastmcp_check: "2.14.5"
 
 recipe:
   name: robotframework-robocop-split
@@ -123,6 +124,7 @@ outputs:
           run:
             - pytest-cov
             - python ${{ python_min }}.*
+            - fastmcp ${{ fastmcp_check }}.*
         script:
           file: run_test.py
     about:
