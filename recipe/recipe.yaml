@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "8.2.0"
+  version: "8.2.2"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 4ee57053cf89af06f02acb8841b1a0c364886d8ecb05f410891c9fb91269e2ef
+  sha256: 190a43720372696dbd8ca65c14a208ad573589d17a69bc035f34c1a8ec12f6aa
 
 build:
   number: 0
@@ -40,7 +40,6 @@ outputs:
         - pathspec >=0.12
         - platformdirs >=4.3
         - python >=${{ python_min }}
-        - python-dateutil >=2.8.2
         - pytz >=2022.7
         - rich >=10.11.0
         - robotframework >=5.0,<7.5
@@ -69,7 +68,7 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("robotframework-robocop", exact=True) }}
-        - fastmcp
+        - fastmcp >=2.13.0,<3
     tests:
       - python:
           imports: robocop.mcp.server
@@ -79,7 +78,6 @@ outputs:
             - ${{ python_check_max }}.*
       - requirements:
           run:
-            - fastmcp >=2.13.0,<3
             - python ${{ python_min }}.*
         script:
           - robocop-mcp --version
