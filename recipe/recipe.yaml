@@ -4,7 +4,6 @@ schema_version: 1
 context:
   version: "8.2.2"
   python_check_max: "3.14"
-  fastmcp_check: "2.14.5"
 
 recipe:
   name: robotframework-robocop-split
@@ -70,7 +69,7 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("robotframework-robocop", exact=True) }}
-        - fastmcp
+        - fastmcp >=2.13.0,<3
     tests:
       - python:
           imports: robocop.mcp.server
@@ -80,7 +79,6 @@ outputs:
             - ${{ python_check_max }}.*
       - requirements:
           run:
-            - fastmcp >=2.13.0,<3
             - python ${{ python_min }}.*
         script:
           - robocop-mcp --version
@@ -124,7 +122,6 @@ outputs:
           run:
             - pytest-cov
             - python ${{ python_min }}.*
-            - fastmcp ${{ fastmcp_check }}.*
         script:
           file: run_test.py
     about:
