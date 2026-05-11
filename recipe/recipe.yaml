@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "8.2.7"
+  version: "8.2.8"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: f72b9cc72ec3c6677eabd52487fa82f5db611b79aad75f826610165c9238a003
+  sha256: 3063fe90bccc88f41ecb4ccc49718e95f2baf3a2f95b0a44d79d34211a7a6ff2
 
 build:
   number: 0
