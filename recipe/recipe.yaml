@@ -69,7 +69,7 @@ outputs:
     requirements:
       run:
         - ${{ pin_subpackage("robotframework-robocop", exact=True) }}
-        - fastmcp >=2.13.0,<3
+        - fastmcp >=3.0.0
     tests:
       - python:
           imports: robocop.mcp.server
