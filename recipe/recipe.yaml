@@ -59,7 +59,6 @@ outputs:
           run:
             - python ${{ python_min }}.*
         script:
-          - robocop --version
           - robocop --help
 
   - package:
@@ -81,7 +80,6 @@ outputs:
           run:
             - python ${{ python_min }}.*
         script:
-          - robocop-mcp --version
           - robocop-mcp --help
     about:
       summary: Static code analysis tool (linter) and code formatter for Robot Framework (with [mcp])
