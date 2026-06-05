@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "8.2.9"
+  version: "8.2.10"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: 74f493c6daafe98234412e4ee26c733dfb929b75549f66f3e5301cccd012a8a5
+  sha256: cf46382166a53e6cc30b16059debb1d31f8ebb740a504b7f9ddbab89acd3fb9a
 
 build:
   number: 0
@@ -46,7 +46,7 @@ outputs:
         - robotframework >=5.0,<7.5
         - tomli ==2.2.1
         - tomli-w >=1.0
-        - typer >=0.12.5
+        - typer >=0.12.5,<0.26  # avoid typer with vendored click 
         - typing_extensions >=4.15.0
     tests:
       - python:
@@ -59,8 +59,8 @@ outputs:
           run:
             - python ${{ python_min }}.*
         script:
-          - robocop --version
           - robocop --help
+          - robocop --version
 
   - package:
       name: robotframework-robocop-with-mcp
@@ -81,8 +81,8 @@ outputs:
           run:
             - python ${{ python_min }}.*
         script:
-          - robocop-mcp --version
           - robocop-mcp --help
+          - robocop-mcp --version
     about:
       summary: Static code analysis tool (linter) and code formatter for Robot Framework (with [mcp])
 
