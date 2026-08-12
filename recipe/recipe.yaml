@@ -42,7 +42,7 @@ outputs:
         - python >=${{ python_min }}
         - pytz >=2022.7
         - rich >=10.11.0
-        - robotframework >=5.0,<7.5
+        - robotframework >=5.0,<7.6
         - tomli ==2.2.1
         - tomli-w >=1.0
         - typer >=0.26
