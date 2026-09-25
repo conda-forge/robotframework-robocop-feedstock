@@ -11,7 +11,7 @@ recipe:
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhostedq.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
   sha256: 1204a8645a48eaba0a7779035a8af3419a681fa3d511b875f57856e5357fe749
 
 build:
@@ -52,7 +52,7 @@ outputs:
           strict: true
           site_packages:
             - robocop/**
-            - robocop-${{ version }}.dist-info/**
+            - robotframework_robocop-${{ version }}.dist-info/**
       - python:
           imports: robocop.run
           pip_check: true
