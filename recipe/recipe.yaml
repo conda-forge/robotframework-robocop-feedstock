@@ -2,7 +2,8 @@
 schema_version: 1
 
 context:
-  version: "9.0.0"
+  version: "9.1.0"
+  summary:  Static code analysis tool (linter) and code formatter for Robot Framework
   python_check_max: "3.14"
 
 recipe:
@@ -10,8 +11,8 @@ recipe:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: c176337e235a3ebf563bf7c064d6c2f890366133f8beccedf62152c2cb1a6009
+  url: https://files.pythonhosted.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
+  sha256: 1204a8645a48eaba0a7779035a8af3419a681fa3d511b875f57856e5357fe749
 
 build:
   number: 0
@@ -24,7 +25,7 @@ outputs:
       noarch: python
       script:
         content:
-          - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+          - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
       python:
         entry_points:
           - robocop = robocop.run:main
@@ -40,14 +41,18 @@ outputs:
         - pathspec >=0.12
         - platformdirs >=4.3
         - python >=${{ python_min }}
-        - pytz >=2022.7
         - rich >=10.11.0
         - robotframework >=5.0,<7.6
-        - tomli ==2.2.1
         - tomli-w >=1.0
         - typer >=0.26
         - typing_extensions >=4.15.0
+        - tzdata
     tests:
+      - package_contents:
+          strict: true
+          site_packages:
+            - robocop/**
+            - robotframework_robocop-${{ version }}.dist-info/**
       - python:
           imports: robocop.run
           pip_check: true
@@ -84,7 +89,7 @@ outputs:
           - robocop-mcp --help
           - robocop-mcp --version
     about:
-      summary: Static code analysis tool (linter) and code formatter for Robot Framework (with [mcp])
+      summary: ${{ summary }} (with [mcp])
 
   - package:
       name: robotframework-robocop-with-all
@@ -104,7 +109,7 @@ outputs:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
     about:
-      summary: Static code analysis tool (linter) and code formatter for Robot Framework (with all [extras])
+      summary: ${{ summary }} (with all [extras])
 
   - package:
       name: robotframework-robocop-with-tests
@@ -125,10 +130,10 @@ outputs:
         script:
           file: run_test.py
     about:
-      summary: Static code analysis tool (linter) and code formatter for Robot Framework (with all [extras] and tests)
+      summary: ${{ summary }} (with all [extras] and tests)
 
 about:
-  summary: Static code analysis tool (linter) and code formatter for Robot Framework
+  summary: ${{ summary }}
   license: Apache-2.0
   license_file: LICENSE
   homepage: https://pypi.org/project/robotframework-robocop
