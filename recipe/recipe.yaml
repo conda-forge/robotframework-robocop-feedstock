@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "9.3.0"
+  version: "9.4.0"
   summary: Static code analysis tool (linter) and code formatter for Robot Framework
   python_check_max: "3.15"
 
@@ -12,7 +12,7 @@ recipe:
 
 source:
   url: https://files.pythonhosted.org/packages/source/r/robotframework-robocop/robotframework_robocop-${{ version }}.tar.gz
-  sha256: af2993d98aebca96f9ef7ed78e12ef8e878b2ce741579ad26f35207d4d528696
+  sha256: e8a94dddb4b254bdff675c18dce212512ab38bc332883bf855ec3467bbe5af33
 
 build:
   number: 0
